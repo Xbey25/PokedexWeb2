@@ -1,10 +1,19 @@
-import React from 'react';
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Main from './Components/Main';
+import About from './Components/About';
+
 import './Components/style.css'
-function App() {
+
+export function App() {
   return (
     <>
-      <Main/>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/About" element={<About/>} />
+      </Routes>
+    </Router>
+
     </>
   );
 }

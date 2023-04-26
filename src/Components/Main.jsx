@@ -1,6 +1,7 @@
 import React from "react";
 import Card from "./Card";
 import Pokeinfo from "./Pokeinfo.jsx";
+import {Link} from "react-router-dom";
 import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
@@ -36,6 +37,7 @@ const Main=()=>{
     return(
         <>
             <div className="container">
+                <button><Link to={'/About'}>About</Link></button>
                 <div className="left-content">
                     <Card pokemon={pokeData} loading={loading} infoPokemon={poke=>setPokeDex(poke)}/>
                     
@@ -54,6 +56,7 @@ const Main=()=>{
                 </div>
                 <div className="right-content">
                    <Pokeinfo data={pokeDex}/>
+                
                 </div>
             </div>
         </>
